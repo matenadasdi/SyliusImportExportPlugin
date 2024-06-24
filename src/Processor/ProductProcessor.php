@@ -247,8 +247,8 @@ final class ProductProcessor implements ResourceProcessorInterface
         $product->setEnabled((bool) $data['Enabled']);
         $product->setDescription($data['Description']);
         $product->setShortDescription(substr($data['Short_description'], 0, 255));
-        $product->setMetaDescription(substr($data['Meta_description'], 0, 255));
-        $product->setMetaKeywords(substr($data['Meta_keywords'], 0, 255));
+        $product->setMetaDescription(substr($data['Meta_description'], 0, 800));
+        $product->setMetaKeywords(substr($data['Meta_keywords'], 0, 800));
         $product->setSlug($product->getSlug() ?: $this->slugGenerator->generate($product->getName()));
     }
 
